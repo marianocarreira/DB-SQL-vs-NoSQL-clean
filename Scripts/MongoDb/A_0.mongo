@@ -1,0 +1,36 @@
+// Use the database selected by your authenticated mongosh session.
+// See config/README.md. This standalone script mutates data.
+
+// Define the number of rows to insert
+const maxRows = 500000;
+
+// Define a function to generate random data
+function randomValue(max) {
+    return Math.floor(Math.random() * max) + 1;
+}
+
+// Insert rows of random data
+for (let counter = 1; counter <= maxRows; counter++) {
+    db.Posts.insert({
+        Id: -counter,
+        AcceptedAnswerId: randomValue(1000000),
+        AnswerCount: randomValue(100),
+        Body: new ObjectId().str, // Generate a random string
+        ClosedDate: new Date(), // Current date
+        CommentCount: randomValue(100),
+        CommunityOwnedDate: null, // Nullable field
+        CreationDate: new Date(), // Current date
+        FavoriteCount: randomValue(100),
+        LastActivityDate: new Date(), // Current date
+        LastEditDate: new Date(), // Current date
+        LastEditorDisplayName: new ObjectId().str.substr(0, 30), // Random string, max 30 chars
+        LastEditorUserId: null, // Nullable field
+        OwnerUserId: 11,
+        ParentId: randomValue(1000000),
+        PostTypeId: randomValue(10),
+        Score: randomValue(100),
+        Tags: new ObjectId().str.substr(0, 300), // Random string, max 300 chars
+        Title: new ObjectId().str.substr(0, 500), // Random string, max 500 chars
+        ViewCount: randomValue(1000000)
+    });
+}

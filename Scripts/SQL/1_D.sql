@@ -1,0 +1,1 @@
+SELECT * FROM Posts WHERE OwnerUserId = 42;

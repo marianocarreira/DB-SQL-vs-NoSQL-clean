@@ -1,0 +1,4 @@
+SELECT PostTypeId, COUNT(*) 
+FROM Posts 
+GROUP BY PostTypeId 
+HAVING COUNT(*) > 1000;

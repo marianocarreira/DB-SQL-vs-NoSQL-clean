@@ -1,0 +1,22 @@
+title = "Database benchmark publication checks"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "jmeter-literal-password"
+description = "Non-variable JMeter password value"
+regex = '''<stringProp name="password">([^<$][^<]*)</stringProp>'''
+secretGroup = 1
+
+[[rules]]
+id = "literal-script-password"
+description = "Quoted script password assignment"
+regex = '''(?i)\b(?:password|passwd|pwd)\s*=\s*["']([^"'\r\n]{4,})["']'''
+secretGroup = 1
+
+[[rules]]
+id = "benchmark-properties-password"
+description = "Nonempty benchmark password in properties file"
+regex = '''(?m)^(?:sql|mongo)\.password[ \t]*=[ \t]*([^ \r\n#][^\r\n]*)$'''
+secretGroup = 1

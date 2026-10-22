@@ -1,0 +1,1 @@
+SELECT PostTypeId, AVG(Score) AS AvgScore FROM Posts GROUP BY PostTypeId;

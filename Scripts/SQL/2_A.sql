@@ -1,0 +1,1 @@
+SELECT OwnerUserId, COUNT(*) FROM Posts GROUP BY OwnerUserId;

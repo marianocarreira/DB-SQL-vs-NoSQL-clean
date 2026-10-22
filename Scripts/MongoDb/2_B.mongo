@@ -1,0 +1,1 @@
+db.posts.aggregate([ { $group: { _id: "$PostTypeId", count: { $sum: 1 } } }, { $match: { count: { $gt: 1000 } } } ]);

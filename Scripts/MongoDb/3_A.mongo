@@ -1,0 +1,1 @@
+db.posts.aggregate([ { $match: { OwnerUserId: 11 } }, { $lookup: { from: "users", localField: "OwnerUserId", foreignField: "_id", as: "owner" } }, { $project: { Title: 1, "owner.DisplayName": 1 } } ]);

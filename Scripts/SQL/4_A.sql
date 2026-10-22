@@ -1,0 +1,1 @@
+SELECT * FROM Posts WHERE Score > (SELECT AVG(Score) FROM Posts);

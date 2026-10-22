@@ -1,0 +1,32 @@
+# Local credentials and overrides
+.env
+.env.*
+!.env.example
+*.local.properties
+*.local.json
+*.local.yml
+private/
+secrets/
+
+# Raw outputs can contain queries, credentials or data
+jmeter.log
+*.jtl
+results/raw/
+results/reports/
+*.log
+
+# Original screenshots/PDFs and archives are withheld pending separate review
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.zip
+*.7z
+*.bak
+*.mdf
+*.ldf
+*.jar
+*.p12
+*.pfx
+*.key
+__pycache__/

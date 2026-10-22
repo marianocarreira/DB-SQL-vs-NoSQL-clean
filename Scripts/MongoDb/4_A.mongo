@@ -1,0 +1,1 @@
+const avgScore = db.posts.aggregate([ { $group: { _id: null, avgScore: { $avg: "$Score" } } } ]).toArray()[0].avgScore; db.posts.find({ Score: { $gt: avgScore } });

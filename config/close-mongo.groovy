@@ -1,0 +1,5 @@
+def client = vars.getObject('mongoClient')
+if (client != null) client.close()
+vars.remove('mongoClient')
+vars.remove('postsCollection')
+SampleResult.setIgnore()
